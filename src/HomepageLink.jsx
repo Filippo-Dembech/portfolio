@@ -3,7 +3,7 @@ import styles from './styles/HomepageLink.module.css'
 
 export default function HomepageLink({ to, children }) {
     return (
-        <li className={styles.link}>
+        <li className={styles.homepageLink}>
             <Link to={`/${to}`}>{`${to} ${children || ""}`}</Link>
         </li>
     )

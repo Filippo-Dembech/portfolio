@@ -9,17 +9,20 @@ export default function Homepage() {
 
     return (
         <main className={styles.homepage}>
+            <div className={styles.background} />
             <h1 className={styles.title}>
                 <div>Welcome to</div>
                 <div>{titleName}</div>
                 <div>Portfolio</div>
             </h1>
-            <p className={styles.description}>What can I do? Click one of the link below to see one of my projects:</p>
-            <ul className={styles.projectsList}>
-                <HomepageLink to="planes">(try on Desktop)</HomepageLink>
-                <HomepageLink to="sample"/>
-                <HomepageLink to="test"/>
-            </ul>
+            <div className={styles.projectsSection}>
+                <p className={styles.description}>What can I do? Click one of the link below to see one of my projects:</p>
+                <ul className={styles.projectsList}>
+                    <HomepageLink to="planes">(try on Desktop)</HomepageLink>
+                    <HomepageLink to="sample"/>
+                    <HomepageLink to="test"/>
+                </ul>
+            </div>
         </main>
     );
 }

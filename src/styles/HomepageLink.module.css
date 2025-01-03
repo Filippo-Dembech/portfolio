@@ -1,11 +1,11 @@
 
-.link {
+.homepageLink {
     list-style-type: none;
     text-align: center;
     margin: 3% 0;
 }
 
-.link a {
+.homepageLink a {
     text-decoration: none;
     border: 2px solid purple;
     display: block;
@@ -16,7 +16,7 @@
     color: rgb(243, 183, 242);
 }
 
-.link a:hover {
+.homepageLink a:hover {
     background-color: rgba(243, 183, 242, 0.8);
     color: purple;
     box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
@@ -24,7 +24,7 @@
 }
 
 @media only screen and (max-width: 850px) {
-    .link {
+    .homepageLink {
         font-size: 0.7rem;
     }
 }
