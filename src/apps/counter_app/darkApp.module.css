@@ -1,0 +1,38 @@
+:global(body) {
+    padding: 0;
+    margin: 0;
+}
+
+:global(ul), :global(ol)  {
+    padding: 20px 50px;
+}
+
+:global(h3:not(:first-child)) {
+    margin: 20px 0 0
+}
+
+.app {
+    background-color: rgb(32, 33, 44);
+    color: rgba(252, 255, 243, 0.845)
+}
+
+.themeButton {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    color: white;
+    filter: drop-shadow(0 3px 10px grey);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.buttonIcon {
+    clip-path: circle(25px);
+    background-color: rgba(252, 255, 243, 0.845);
+    padding: 20px;
+}
+
+.buttonIcon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px grey;
+}

@@ -1,0 +1,16 @@
+.signDisplayer {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    color: black;
+}
+
+.blueBackground {
+    background-color: rgb(230, 230, 255);
+}
+
+.greenBackground {
+    background-color: rgb(230, 255, 233);
+}

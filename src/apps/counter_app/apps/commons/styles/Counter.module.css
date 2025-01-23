@@ -1,0 +1,37 @@
+.counter {
+    width: 20%;
+    display: flex;
+    margin: 0 auto 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.counter button {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    font-size: 20px;
+    transition-duration: 0.3s;
+}
+
+.counter button:hover {
+    background-color: rgb(230, 230, 255);
+}
+
+.counter .value {
+    font-size: 2rem;
+    animation-name: fade-in;
+    animation-duration: 0.3s;
+}
+
+@keyframes fade-in {
+    from {
+        transform: scale(2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}

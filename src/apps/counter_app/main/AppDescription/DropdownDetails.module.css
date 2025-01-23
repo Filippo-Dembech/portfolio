@@ -1,0 +1,34 @@
+
+.summary {
+    cursor: pointer;
+    font-family: "Rowdies";
+}
+
+.header {
+    display: inline-block;
+    padding-left: 20px;
+    margin: 5px;
+}
+
+.lightContent {
+    background-color: rgb(230, 230, 255);
+    box-sizing: border-box;
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.darkContent {
+    background-color: rgb(55, 56, 74);
+    color: rgba(252, 255, 243, 0.845);
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+
+.fakeLink {
+    text-decoration: underline;
+    color: rgb(182, 182, 255);
+}

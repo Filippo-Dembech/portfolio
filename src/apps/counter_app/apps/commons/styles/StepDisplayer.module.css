@@ -1,0 +1,17 @@
+.stepDisplayer {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: black;
+    background-color: rgb(230, 230, 255);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stepDisplayer .value {
+    font-size: 1.8rem;
+    font-weight: bold;
+}

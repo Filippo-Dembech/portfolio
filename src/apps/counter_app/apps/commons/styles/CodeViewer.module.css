@@ -1,0 +1,42 @@
+.tabs {
+    width: 60%;
+    margin: 40px auto;
+}
+
+.componentTab {
+    background-color: rgb(217, 223, 255);
+    color: black;
+    margin: 0 2px;
+    border-radius: 5px 5px 0 0;
+    opacity: 0.4;
+    transition-duration: 0.2s;
+    font-family: "Josefin Sans", serif;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+}
+
+.stateManagementTab {
+    background-color: rgb(221, 255, 217);
+    color: black;
+    margin: 0 2px;
+    border-radius: 5px 5px 0 0;
+    opacity: 0.4;
+    transition-duration: 0.2s;
+    font-family: "Jersey 10", serif;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+}
+
+li.componentTab:global(.react-tabs__tab--selected) {
+    opacity: 1;
+    background-color: rgb(217, 223, 255);
+}
+
+li.stateManagementTab:global(.react-tabs__tab--selected) {
+    opacity: 1;
+    background-color: rgb(221, 255, 217);
+}
+
+:global(#component-tooltip), :global(#state-tooltip) {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: grey;
+    z-index: 2
+}

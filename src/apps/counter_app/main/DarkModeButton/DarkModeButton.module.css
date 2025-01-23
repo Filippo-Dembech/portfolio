@@ -1,0 +1,28 @@
+.button {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    filter: drop-shadow(0 3px 10px grey);
+    cursor: pointer;
+    transition-duration: 0.2s;
+    margin: unset;
+    padding: unset;
+    box-sizing: unset;
+}
+
+.darkIcon {
+    clip-path: circle(25px);
+    background-color: rgba(252, 255, 243, 0.845);
+    padding: 20px;
+    margin: unset;
+    box-sizing: unset;
+}
+
+.lightIcon {
+    clip-path: circle(25px);
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    margin: unset;
+    box-sizing: unset;
+}
+
