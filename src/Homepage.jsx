@@ -18,9 +18,8 @@ export default function Homepage() {
             <div className={styles.projectsSection}>
                 <p className={styles.description}>What can I do? Click one of the link below to see one of my projects:</p>
                 <ul className={styles.projectsList}>
-                    <HomepageLink to="planes">(try on Desktop)</HomepageLink>
-                    <HomepageLink to="sample"/>
-                    <HomepageLink to="test"/>
+                    <HomepageLink to="planes">Planes App (try on Desktop)</HomepageLink>
+                    <HomepageLink to="counter_app">Counter App (try on Desktop)</HomepageLink>
                 </ul>
             </div>
         </main>

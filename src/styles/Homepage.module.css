@@ -1,10 +1,13 @@
 .homepage {
-    padding: 5%;
     width: 100vw;
-    color: rgba(243, 183, 242, 0.8);
+    color: rebeccapurple;
     font-family: "Source Code Pro";
     text-align: center;
     overflow-y: visible;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .background {
@@ -15,19 +18,19 @@
     width: 100%;
     z-index: -1;
     background: url("https://media1.tenor.com/m/f-KMXPuqT8IAAAAd/vaporwave-sunset.gif"),
-        rgba(0, 0, 0, 0.8);
+        rgba(0, 0, 0, 0.6);
     background-blend-mode: color;
     background-size: 100% 100%;
 }
 
 .title {
-    margin-bottom: 5%;
     font-size: 4rem;
     font-family: "Sixtyfour";
 }
 
-.name {
-    color: rebeccapurple;
+.name,
+.description {
+    color: rgba(243, 183, 242, 0.8);
 }
 
 .projectsList {

@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router';
 import ConfigurablePlanes from './apps/planes/ConfigurablePlanes';
 import { useEffect, useState } from 'react';
 import Homepage from './Homepage';
+import CounterApp from './apps/counter_app/CounterApp';
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Homepage />}/>
       <Route path='/planes' element={<ConfigurablePlanes setDocumentTitle={setDocumentTitle}/>} />
+      <Route path='/counter_app' element={<CounterApp setDocumentTitle={setDocumentTitle}/>} />
     </Routes>
   );
 }
