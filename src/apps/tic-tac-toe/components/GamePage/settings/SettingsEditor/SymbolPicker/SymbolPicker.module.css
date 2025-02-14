@@ -1,0 +1,15 @@
+.symbolPicker {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.symbols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.symbolPicker .label {
+    margin-bottom: 10px;
+}

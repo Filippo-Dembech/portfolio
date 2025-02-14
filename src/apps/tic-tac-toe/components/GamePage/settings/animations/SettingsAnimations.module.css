@@ -1,0 +1,103 @@
+.slideIn {
+    animation: slide-in 0.3s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes slide-in {
+    
+    from {
+        opacity: 0;
+        transform: translateX(-50%) rotate(180deg);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(-50%) rotate(0deg);
+    }
+}
+
+
+.slideOut {
+    animation: slide-out 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-out {
+    
+    from {
+        opacity: 1;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    
+    to {
+        opacity: 0;
+        transform: translateX(-50%) rotate(180deg);
+        display: none;
+    }
+}
+
+.rotateIn {
+    animation: rotate-in 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate-in {
+    from {
+        rotate: 0deg
+    }
+    to {
+        rotate: 360deg
+    }
+}
+
+.rotateOut {
+    animation: rotate-out 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate-out {
+    from {
+        rotate: 360deg;
+    }
+    
+    to {
+        rotate: 0deg;
+    }
+}
+
+.reveal {
+    animation: reveal 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes reveal {
+
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    
+    to {
+        width: 200px;
+        opacity: 1;
+    }
+}
+
+.unreveal {
+    animation: unreveal 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes unreveal {
+
+    from {
+        width: 200px;
+        opacity: 1;
+    }
+    
+    to {
+        width: 0;
+        opacity: 0;
+    }
+}

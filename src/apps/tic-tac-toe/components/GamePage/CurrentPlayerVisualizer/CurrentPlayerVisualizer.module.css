@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.playerVisualizer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player {
+    width: 0;
+    transition: width 0.4s;
+}
+
+.active {
+    width: 50px;
+}

@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.settings {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    position: relative;
+    color: white;
+    z-index: 4;
+}

@@ -1,0 +1,26 @@
+.icon {
+    border: none;
+    color: white;
+    font-family: "Press Start 2P";
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    position: relative;
+}
+
+.icon:hover {
+    rotate: 360deg
+}
+
+.text {
+    color: white;
+    position: absolute;
+    left: 100%;
+    margin-left: 15px;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition-duration: 0.5s;
+}

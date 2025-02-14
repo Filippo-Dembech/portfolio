@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.gamePage {
+    height: 100vh;
+    position: relative;
+    background-color: black;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

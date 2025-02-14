@@ -1,0 +1,9 @@
+.colorPicker {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.colorPicker label {
+    margin-bottom: 10px;
+}

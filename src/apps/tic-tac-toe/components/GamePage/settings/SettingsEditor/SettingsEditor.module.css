@@ -1,0 +1,45 @@
+.settingsEditor {
+    /* glass effect */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+
+    /* positioning */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    /* styling */
+    padding: 20px;
+    display: flex;
+    border-radius: 20px;
+    margin-top: 20px;
+    transform-origin: top left;
+}
+
+
+.settingsEditor::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.settingsEditor .player {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* editor's line separator */
+.settingsEditor .player:not(:last-child) {
+    border-right: 1px solid white;
+}
