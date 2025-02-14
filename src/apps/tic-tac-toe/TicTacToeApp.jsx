@@ -4,8 +4,6 @@ import GamePage from './components/GamePage/GamePage';
 import { useEffect } from "react";
 
 export default function TicTacToeApp({setDocumentTitle}) {
-    
-    console.log("hi there");
 
     useEffect(() => {
         setDocumentTitle((curr) => `${curr} | Tic Tac Toe`);
