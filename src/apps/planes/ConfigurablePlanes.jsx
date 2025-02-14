@@ -10,6 +10,9 @@ export default function ConfigurablePlanes({setDocumentTitle}) {
     
     useEffect(() => {
         setDocumentTitle((curr) => `${curr} | Planes`);
+        return () => {
+            setDocumentTitle("FD Portfolio")
+        }
     }, [setDocumentTitle]);
 
     return (

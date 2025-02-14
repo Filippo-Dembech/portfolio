@@ -20,6 +20,7 @@ export default function Homepage() {
                 <ul className={styles.projectsList}>
                     <HomepageLink to="planes">Planes App (try on Desktop)</HomepageLink>
                     <HomepageLink to="counter_app">Counter App (try on Desktop)</HomepageLink>
+                    <HomepageLink to="tic_tac_toe">Tic Tac Toe App (try on Desktop)</HomepageLink>
                 </ul>
             </div>
         </main>
