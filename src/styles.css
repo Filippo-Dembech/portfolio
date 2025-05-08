@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+
+@theme {
+    --font-custom-alumni-sans: "Alumni Sans Pinstripe", sans-serif;
+    --font-custom-bebas: "Bebas Neue", sans-serif;
+    --font-custom-tuffy: "Tuffy", sans-serif;
+    --font-custom-roboto: "Roboto Mono", monospace;
+    --font-custom-fira-code: "Fira Code", monospace;
+    --text-fluid: clamp(15px, 3vw, 1.5rem)
+}
