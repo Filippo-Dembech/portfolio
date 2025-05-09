@@ -7,5 +7,5 @@
     --font-custom-tuffy: "Tuffy", sans-serif;
     --font-custom-roboto: "Roboto Mono", monospace;
     --font-custom-fira-code: "Fira Code", monospace;
-    --text-fluid: clamp(15px, 3vw, 1.5rem)
+    --text-fluid: clamp(5px, 3vw, 1.5rem)
 }
