@@ -1,5 +1,6 @@
+import { keyIcons } from "./keyIcons";
+
 export function getKeyCode(key) {
-    if (key === " ") return "space";
-    if (key === "_") return "Enter";
+    if (key === "_") return keyIcons.enter;
     return key;
 }
