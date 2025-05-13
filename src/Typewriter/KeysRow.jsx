@@ -5,7 +5,7 @@ export default function KeysRow({ keys, pressedKey }) {
         <>
             {keys.map((key) => (
                 <Key
-                    key={key.symbol}
+                    key={key.id}
                     button={key}
                     isPressed={pressedKey?.toLowerCase() === key.symbol?.toLowerCase()}
                 />
