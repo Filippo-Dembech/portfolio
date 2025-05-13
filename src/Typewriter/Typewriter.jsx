@@ -4,31 +4,41 @@ import { TypeAnimation } from "react-type-animation";
 import Keyboard from "./Keyboard";
 import { keyIcons } from "./keyIcons";
 
-export default function Typewriter({ keySequence, delay = 100 }) {
+export default function Typewriter({ sentences, delay = 100 }) {
     const [pressedKey, setPressedKey] = useState(null);
     const [isDeleting, setIsDeleting] = useState(false);
-    const [hasStarted, setHasStarted] = useState(false);
+    const [hasStartedTyping, setHasStartedTyping] = useState(false);
 
     const currentKeyIndex = useRef(0);
     const currentSentenceIndex = useRef(0);
-    
-    //const keySequence = sentences[currentSentenceIndex]
+
+    const keySequence = sentences[currentSentenceIndex.current];
+    const typingSentences = sentences.reduce(
+        (result, currSentence) => [
+            ...result,
+            currSentence,
+            2000,
+            () => setIsDeleting(true),
+            "",
+            () => {
+                setIsDeleting(false);
+                currentSentenceIndex.current++;
+                currentKeyIndex.current = 0;
+            },
+            ""
+        ],
+        []
+    );
 
     useEffect(() => {
-        if (!hasStarted) return;
-        const key = getKeyCode(keySequence[currentKeyIndex.current]);
-        if (isDeleting) {
-            setPressedKey(keyIcons.back);
-            return;
-        }
-        setPressedKey(key);
-        currentKeyIndex.current++;
+        if (!hasStartedTyping) return;
         const intervalId = setInterval(() => {
             if (isDeleting) {
                 setPressedKey(keyIcons.back);
                 return;
             }
             if (currentKeyIndex.current >= keySequence.length) {
+                console.log(currentKeyIndex.current)
                 setPressedKey(null);
                 return;
             }
@@ -37,7 +47,7 @@ export default function Typewriter({ keySequence, delay = 100 }) {
             currentKeyIndex.current++;
         }, delay);
         return () => clearInterval(intervalId);
-    }, [delay, isDeleting, hasStarted, keySequence]);
+    }, [delay, isDeleting, hasStartedTyping, keySequence]);
 
     return (
         <div className="flex flex-col justify-center">
@@ -45,25 +55,23 @@ export default function Typewriter({ keySequence, delay = 100 }) {
                 <TypeAnimation
                     sequence={[
                         () => {
+                            setHasStartedTyping(false);
                             setIsDeleting(false);
+                            currentSentenceIndex.current = 0;
                         },
                         1000,
                         () => {
-                            setHasStarted(true);
+                            setHasStartedTyping(true);
                             currentKeyIndex.current = 0;
                         },
-                        "Hi there,\nI'm Phil.\nWelcome to my world!",
-                        2000,
-                        () => {
-                            setIsDeleting(true);
-                        },
+                        ...typingSentences,
                         "",
                     ]}
                     className="font-bold whitespace-pre-line font-custom-bebas text-orange-600"
                     wrapper="span"
                     speed={1}
                     preRenderFirstString={isDeleting}
-                    deletionSpeed={70}
+                    //deletionSpeed={70}
                     style={{
                         fontSize: "clamp(1.2rem, 10vw, 4rem)",
                         display: "inline-block",

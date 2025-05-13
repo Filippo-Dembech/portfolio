@@ -1,10 +1,10 @@
-export function getRowSpan(span) {
+export function getRowSpanStyle(span) {
     if (span === 2) return "row-span-2";
     if (span === 3) return "row-span-3";
     if (span === 4) return "row-span-4";
     return "";
 }
-export function getColSpan(span) {
+export function getColSpanStyle(span) {
     if (span === 2) return "col-span-2";
     if (span === 3) return "col-span-3";
     if (span === 4) return "col-span-4";
