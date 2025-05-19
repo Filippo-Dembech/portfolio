@@ -56,7 +56,7 @@ export default function Typewriter({ sentences, delay = 100 }) {
             <div className="transform-3d perspective-distant">
                 <div
                     style={{ transform: `translateZ(-${monitorDepth}px)` }}
-                    className={cursorStyle + " " + textStyle}
+                    className={cursorStyle + textStyle}
                 >
                     {text}
                 </div>

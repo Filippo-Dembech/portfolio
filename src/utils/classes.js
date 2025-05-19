@@ -1,3 +1,3 @@
 export function classes(...classes) {
-    return classes.join(" ");
+    return classes.join(" ") + " ";
 }
