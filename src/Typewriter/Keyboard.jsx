@@ -1,15 +1,21 @@
+import { useEffect, useRef, useState } from "react";
 import { classes } from "../utils/classes";
 import Key from "./Key";
 import KeysRow from "./KeysRow";
 import { keyIcons } from "./keyIcons";
 import { keyboardLayout } from "./keyboardLayout";
 
-export default function Keyboard({ pressedKey }) {
+export default function Keyboard({
+    pressedKey,
+    isDeleting,
+    monitorDepthSetter,
+}) {
+    const keyboardRef = useRef(null);
+    const [height, setHeight] = useState(0);
+    
+    const degrees = 30;
 
     const keyboardClasses = classes(
-        "rotate-x-50",
-        "md:rotate-x-40",
-        "translate-z-20",
         "inline-grid",
         "grid-cols-16",
         "gap-1.5",
@@ -20,14 +26,36 @@ export default function Keyboard({ pressedKey }) {
         "grid",
         "grid-cols-3",
         "col-span-2",
-        "gap-1.5",
+        "gap-1.5"
     );
 
+    useEffect(() => {
+        const radians = degrees * (Math.PI / 180);
+        const monitorDepth = (height / 2) * Math.sin(radians);
+        monitorDepthSetter(monitorDepth);
+        const el = keyboardRef.current;
+        if (!el) return;
+
+        const observer = new ResizeObserver((entries) => {
+            for (let entry of entries) {
+                setHeight(entry.contentRect.height);
+            }
+        });
+
+        observer.observe(el);
+
+        return () => observer.disconnect();
+    }, [height, monitorDepthSetter]);
+
     return (
-        <div className={keyboardClasses}>
+        <div
+            style={{ transform: `rotateX(${degrees}deg)` }}
+            ref={keyboardRef}
+            className={keyboardClasses}
+        >
             <KeysRow
                 keys={keyboardLayout.firstRow}
-                pressedKey={pressedKey}
+                pressedKey={isDeleting ? keyIcons.back : pressedKey}
             />
             <KeysRow
                 keys={keyboardLayout.secondRow}
@@ -53,7 +81,6 @@ export default function Keyboard({ pressedKey }) {
                         rowSpan: 1,
                         colSpan: 1,
                     }}
-                    className="text-[4px]"
                 />
                 <Key button={{ symbol: "", rowSpan: 1, colSpan: 1 }} />
                 <Key
@@ -62,7 +89,6 @@ export default function Keyboard({ pressedKey }) {
                         rowSpan: 1,
                         colSpan: 1,
                     }}
-                    className="text-[4px]"
                 />
                 <Key
                     button={{
@@ -70,7 +96,6 @@ export default function Keyboard({ pressedKey }) {
                         rowSpan: 1,
                         colSpan: 1,
                     }}
-                    className="text-[4px]"
                 />
                 <Key
                     button={{
@@ -78,7 +103,6 @@ export default function Keyboard({ pressedKey }) {
                         rowSpan: 1,
                         colSpan: 1,
                     }}
-                    className="text-[4px]"
                 />
             </div>
         </div>

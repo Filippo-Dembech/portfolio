@@ -4,91 +4,69 @@ import { TypeAnimation } from "react-type-animation";
 import Keyboard from "./Keyboard";
 import { keyIcons } from "./keyIcons";
 import { useIterate } from "../hooks/useIterate";
+import { classes } from "../utils/classes";
 
 export default function Typewriter({ sentences, delay = 100 }) {
-    const [sentence, nextSentence, noMoreSentences] = useIterate(sentences);
-    const [currentKey, nextKey, noMoreKeys] = useIterate(sentence);
-
-    const [pressedKey, setPressedKey] = useState(null);
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [hasStartedTyping, setHasStartedTyping] = useState(false);
-
-    const currentKeyIndex = useRef(0);
-    const currentSentenceIndex = useRef(0);
-
-    const keySequence = sentences[currentSentenceIndex.current];
-    const typingSentences = sentences.reduce(
-        (result, currSentence) => [
-            ...result,
-            currSentence,
-            2000,
-            () => setIsDeleting(true),
-            "",
-            () => {
-                setIsDeleting(false);
-                currentSentenceIndex.current++;
-                currentKeyIndex.current = 0;
-            },
-            "",
-        ],
-        []
+    const [currentKey, nextKey, noMoreKeys, resetKeysIteration] = useIterate(
+        sentences.join("|") + "|"
     );
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [monitorDepth, setMonitoDepth] = useState(0);
 
-    /*
+    const cursorStyle = classes(
+        "after:content-['']",
+        "after:border-r-4",
+        "after:animate-blink",
+        "after:border-r-orange-500"
+    );
+    
+    const textStyle = classes(
+        "text-orange-500",
+    )
+
+    const [text, setText] = useState("");
+
+    const typingSpeed = 60;
+
     useEffect(() => {
-        if (!hasStartedTyping) return;
+        if (noMoreKeys) {
+            resetKeysIteration();
+            setText("");
+            return;
+        }
+        if (currentKey === "") {
+            setIsDeleting(false);
+        }
+        if (currentKey === "|") {
+            setIsDeleting(true);
+        }
         const intervalId = setInterval(() => {
             if (isDeleting) {
-                setPressedKey(keyIcons.back);
+                setText((curr) => curr.slice(0, -1));
                 return;
             }
-            if (currentKeyIndex.current >= keySequence.length) {
-                console.log(currentKeyIndex.current);
-                setPressedKey(null);
-                return;
-            }
-            const key = getKeyCode(keySequence[currentKeyIndex.current]);
-            setPressedKey(key);
-            currentKeyIndex.current++;
-        }, delay);
+            setText((curr) => curr + currentKey);
+            nextKey();
+        }, typingSpeed);
         return () => clearInterval(intervalId);
-    }, [delay, isDeleting, hasStartedTyping, keySequence]);
-    */
+    }, [isDeleting, currentKey, nextKey, noMoreKeys, resetKeysIteration]);
 
     return (
         <div className="flex flex-col justify-center">
-        {/*
-            <div className="w-[70vw] mx-auto">
-                <TypeAnimation
-                    sequence={[
-                        () => {
-                            setHasStartedTyping(false);
-                            setIsDeleting(false);
-                            currentSentenceIndex.current = 0;
-                        },
-                        1000,
-                        () => {
-                            setHasStartedTyping(true);
-                            currentKeyIndex.current = 0;
-                        },
-                        ...typingSentences,
-                        "",
-                    ]}
-                    className="font-bold whitespace-pre-line font-custom-bebas text-orange-600"
-                    wrapper="span"
-                    speed={1}
-                    preRenderFirstString={isDeleting}
-                    //deletionSpeed={70}
-                    style={{
-                        fontSize: "clamp(1.2rem, 10vw, 4rem)",
-                        display: "inline-block",
-                    }}
-                    repeat={Infinity}
-                />
+            <div className="transform-3d perspective-distant">
+                <div
+                    style={{ transform: `translateZ(-${monitorDepth}px)` }}
+                    className={cursorStyle + " " + textStyle}
+                >
+                    {text}
+                </div>
             </div>
-            */}
-            <div className="transform-3d perspective-[1000px] text-center px-5 sm:px-10">
-                <Keyboard pressedKey={pressedKey} />
+            <div className="transform-3d perspective-distant text-center">
+                <Keyboard
+                    pressedKey={currentKey}
+                    isDeleting={isDeleting}
+                    monitorDepthSetter={setMonitoDepth}
+                />
             </div>
         </div>
     );
