@@ -5,7 +5,6 @@ const TypewriterContext = createContext();
 function TypewriterProvider(props) {
     const [text, setText] = useState("");
     const [pressedKeyButton, setPressedKeyButton] = useState(null);
-    const [monitorDepth, setMonitorDepth] = useState(0);
 
     function addChar(char) {
         setText((text) => text + char);
@@ -28,8 +27,6 @@ function TypewriterProvider(props) {
                 resetText,
                 pressedKeyButton,
                 setPressedKeyButton,
-                monitorDepth,
-                setMonitorDepth,
             }}
         >
             {props.children}
