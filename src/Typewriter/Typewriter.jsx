@@ -1,14 +1,11 @@
-import { useEffect, useRef, useState } from "react";
-import { getKeyCode } from "./getKeyCode";
-import { TypeAnimation } from "react-type-animation";
+import { useEffect, useState } from "react";
 import Keyboard from "./Keyboard";
-import { keyIcons } from "./keyIcons";
 import { useIterate } from "../hooks/useIterate";
 import { classes } from "../utils/classes";
 
 export default function Typewriter({ sentences, delay = 100 }) {
     const [currentKey, nextKey, noMoreKeys, resetKeysIteration] = useIterate(
-        sentences.join("|") + "|"
+        sentences.join("|")
     );
     const [isDeleting, setIsDeleting] = useState(false);
     const [monitorDepth, setMonitoDepth] = useState(0);
@@ -19,10 +16,14 @@ export default function Typewriter({ sentences, delay = 100 }) {
         "after:animate-blink",
         "after:border-r-orange-500"
     );
-    
+
     const textStyle = classes(
         "text-orange-500",
-    )
+        "text-4xl",
+        "font-custom-tuffy",
+        "uppercase",
+        "font-bold"
+    );
 
     const [text, setText] = useState("");
 

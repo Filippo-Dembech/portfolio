@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { keyIcons } from "../Typewriter/keyIcons";
 
 export function useIterate(iterable) {
     const [caret, setCaret] = useState(0);
@@ -18,12 +19,14 @@ export function useIterate(iterable) {
     }, [iterable]);
     
     // if iterable is 'undefined' return 'undefined'
+    // otherwise an error would be thrown because undefined[index]
+    // is syntactically wrong
     const currItem = currIterable && currIterable[caret];
     
     const noMoreItems = currIterable === undefined || caret >= currIterable.length;
 
     return [
-        currItem,
+        currItem === "|" ? keyIcons.back : currItem,
         next,
         noMoreItems,
         resetIteration,
