@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import { TypewriterProvider } from "./context/TypewriterContext";
 import Typewriter from "./Typewriter/Typewriter";
 
 // function Monitor({ className, style }) {
@@ -37,10 +38,12 @@ function App() {
 
     return (
         <div className="bg-orange-100 min-h-[100dvh] flex justify-center">
-            <Typewriter
-                sentences={[ "super mario", "galaxy" ]}
-                delay={100}
-            />
+            <TypewriterProvider>
+                <Typewriter
+                    sentences={[ "super mario", "galaxy" ]}
+                    delay={100}
+                />
+            </TypewriterProvider>
         </div>
         // <div>
         //     <div className="transform-3d perspective-distant border-8 inline-block">
