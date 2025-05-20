@@ -42,26 +42,11 @@ export default function Keyboard() {
             ref={keyboardRef}
             className={keyboardClasses}
         >
-            <KeysRow
-                keys={keyboardLayout.firstRow}
-                pressedKey={pressedKeyButton}
-            />
-            <KeysRow
-                keys={keyboardLayout.secondRow}
-                pressedKey={pressedKeyButton}
-            />
-            <KeysRow
-                keys={keyboardLayout.thirdRow}
-                pressedKey={pressedKeyButton}
-            />
-            <KeysRow
-                keys={keyboardLayout.fourthRow}
-                pressedKey={pressedKeyButton}
-            />
-            <KeysRow
-                keys={keyboardLayout.fifthRow}
-                pressedKey={pressedKeyButton}
-            />
+            <KeysRow keys={keyboardLayout.firstRow} />
+            <KeysRow keys={keyboardLayout.secondRow} />
+            <KeysRow keys={keyboardLayout.thirdRow} />
+            <KeysRow keys={keyboardLayout.fourthRow} />
+            <KeysRow keys={keyboardLayout.fifthRow} />
             <div className={directionsClasses}>
                 <KeyButton button={{ symbol: "", rowSpan: 1, colSpan: 1 }} />
                 <KeyButton

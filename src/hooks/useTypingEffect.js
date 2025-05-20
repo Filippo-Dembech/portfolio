@@ -23,7 +23,7 @@ export function useTypingEffect(strings = [], {
     const currentString = strings[currentStringIndex] || "";
     const currentChar = currentString[currentCharIndex] || undefined;
 
-    const { text, setPressedKeyButton, addChar, deleteChar } = useTypewriter();
+    const { text, press, pressNoButton } = useTypewriter();
     
     const timeoutRef = useRef(null)
     
@@ -39,11 +39,10 @@ export function useTypingEffect(strings = [], {
         if (phase === PHASES.TYPING) {
             timeoutRef.current = setTimeout(() => {
                 if (!currentChar) {
-                    setPressedKeyButton(null);
+                    pressNoButton()
                     setPhase(PHASES.WAIT_BEFORE_DELETE);
                 } else {
-                    setPressedKeyButton(currentChar);
-                    addChar(currentChar);
+                    press(currentChar);
                     setCurrentCharIndex(index => index +1);
                 }
             }, typingSpeed)
@@ -58,7 +57,7 @@ export function useTypingEffect(strings = [], {
         if (phase === PHASES.DELETING) {
             timeoutRef.current = setTimeout(() => {
                 if (text === "") {
-                    setPressedKeyButton(null);
+                    pressNoButton();
                     setPhase(PHASES.WAIT_BEFORE_TYPE)
                     setCurrentCharIndex(0)
                     setCurrentStringIndex(index => {
@@ -66,8 +65,7 @@ export function useTypingEffect(strings = [], {
                         return index + 1
                     })
                 } else {
-                    setPressedKeyButton(keyIcons.back)
-                    deleteChar();
+                    press(keyIcons.back)
                 }
             }, deletingSpeed)
         }

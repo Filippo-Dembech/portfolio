@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { getRowSpanStyle, getColSpanStyle } from "./getSpanStyle";
 import { classes } from "../utils/classes";
+import { useTypewriter } from "../context/TypewriterContext";
 
 const keyButtonVariants = {
     idle: { y: 0, borderBottomWidth: "4px" },
@@ -12,7 +13,11 @@ const keyButtonVariants = {
 };
 const keyButtonTransition = { type: "spring", duration: 0.1 };
 
-export default function KeyButton({ button, className, isPressed, action }) {
+export default function KeyButton({ button, className }) {
+    
+    const { pressedKeyButton } = useTypewriter();
+    
+    const isPressed = pressedKeyButton === button.symbol;
 
     const keyButtonClasses = classes(
         "transition-colors",

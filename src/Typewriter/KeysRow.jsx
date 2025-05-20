@@ -1,13 +1,12 @@
 import KeyButton from "./KeyButton";
 
-export default function KeysRow({ keys, pressedKey }) {
+export default function KeysRow({ keys }) {
     return (
         <>
             {keys.map((key) => (
                 <KeyButton
                     key={key.id}
                     button={key}
-                    isPressed={pressedKey?.toLowerCase() === key.symbol?.toLowerCase()}
                 />
             ))}
         </>
