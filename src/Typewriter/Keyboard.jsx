@@ -4,13 +4,13 @@ import KeyButton from "./KeyButton";
 import KeysRow from "./KeysRow";
 import { keyIcons } from "./keyIcons";
 import { keyboardLayout } from "./keyboardLayout";
+import { useTypewriter } from "../context/TypewriterContext";
 
-export default function Keyboard({
-    pressedKey,
-    monitorDepthSetter,
-}) {
+export default function Keyboard() {
     const keyboardRef = useRef(null);
     const [height, setHeight] = useState(0);
+    
+    const { pressedKeyButton, setMonitorDepth } = useTypewriter();
     
     const rotationDegrees = 30;
 
@@ -31,7 +31,7 @@ export default function Keyboard({
     useEffect(() => {
         const radians = rotationDegrees * (Math.PI / 180);
         const monitorDepth = (height / 2) * Math.sin(radians);
-        monitorDepthSetter(monitorDepth);
+        setMonitorDepth(monitorDepth);
         const el = keyboardRef.current;
         if (!el) return;
 
@@ -44,7 +44,7 @@ export default function Keyboard({
         observer.observe(el);
 
         return () => observer.disconnect();
-    }, [height, monitorDepthSetter]);
+    }, [height, setMonitorDepth]);
 
     return (
         <div
@@ -54,23 +54,23 @@ export default function Keyboard({
         >
             <KeysRow
                 keys={keyboardLayout.firstRow}
-                pressedKey={pressedKey}
+                pressedKey={pressedKeyButton}
             />
             <KeysRow
                 keys={keyboardLayout.secondRow}
-                pressedKey={pressedKey}
+                pressedKey={pressedKeyButton}
             />
             <KeysRow
                 keys={keyboardLayout.thirdRow}
-                pressedKey={pressedKey}
+                pressedKey={pressedKeyButton}
             />
             <KeysRow
                 keys={keyboardLayout.fourthRow}
-                pressedKey={pressedKey}
+                pressedKey={pressedKeyButton}
             />
             <KeysRow
                 keys={keyboardLayout.fifthRow}
-                pressedKey={pressedKey}
+                pressedKey={pressedKeyButton}
             />
             <div className={directionsClasses}>
                 <KeyButton button={{ symbol: "", rowSpan: 1, colSpan: 1 }} />
