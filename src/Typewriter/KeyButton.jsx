@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { getRowSpanStyle, getColSpanStyle } from "./getSpanStyle";
 import { classes } from "../utils/classes";
 
-const keyVariants = {
+const keyButtonVariants = {
     idle: { y: 0, borderBottomWidth: "4px" },
     pressed: {
         y: "1px",
@@ -10,11 +10,11 @@ const keyVariants = {
         backgroundColor: "#ffb86a",
     },
 };
-const keyTransition = { type: "spring", duration: 0.1 };
+const keyButtonTransition = { type: "spring", duration: 0.1 };
 
-export default function Key({ button, className, isPressed }) {
+export default function KeyButton({ button, className, isPressed, action }) {
 
-    const keyClasses = classes(
+    const keyButtonClasses = classes(
         "transition-colors",
         "bg-orange-50 text-orange-500",
         "font-custom-fira-code text-fluid font-normal sm:font-bold",
@@ -28,12 +28,12 @@ export default function Key({ button, className, isPressed }) {
 
     return (
         <motion.span
-            variants={keyVariants}
+            variants={keyButtonVariants}
             initial="idle"
             animate={isPressed ? "pressed" : "idle"}
             whileTap="pressed"
-            transition={keyTransition}
-            className={keyClasses}
+            transition={keyButtonTransition}
+            className={keyButtonClasses}
         >
             {button.symbol}
         </motion.span>

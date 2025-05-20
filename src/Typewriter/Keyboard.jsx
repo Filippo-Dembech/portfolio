@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { classes } from "../utils/classes";
-import Key from "./Key";
+import KeyButton from "./KeyButton";
 import KeysRow from "./KeysRow";
 import { keyIcons } from "./keyIcons";
 import { keyboardLayout } from "./keyboardLayout";
@@ -74,30 +74,30 @@ export default function Keyboard({
                 pressedKey={pressedKey}
             />
             <div className={directionsClasses}>
-                <Key button={{ symbol: "", rowSpan: 1, colSpan: 1 }} />
-                <Key
+                <KeyButton button={{ symbol: "", rowSpan: 1, colSpan: 1 }} />
+                <KeyButton
                     button={{
                         symbol: keyIcons.arrows.up,
                         rowSpan: 1,
                         colSpan: 1,
                     }}
                 />
-                <Key button={{ symbol: "", rowSpan: 1, colSpan: 1 }} />
-                <Key
+                <KeyButton button={{ symbol: "", rowSpan: 1, colSpan: 1 }} />
+                <KeyButton
                     button={{
                         symbol: keyIcons.arrows.left,
                         rowSpan: 1,
                         colSpan: 1,
                     }}
                 />
-                <Key
+                <KeyButton
                     button={{
                         symbol: keyIcons.arrows.down,
                         rowSpan: 1,
                         colSpan: 1,
                     }}
                 />
-                <Key
+                <KeyButton
                     button={{
                         symbol: keyIcons.arrows.right,
                         rowSpan: 1,
