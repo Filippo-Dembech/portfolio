@@ -4,7 +4,6 @@ import KeyButton from "./KeyButton";
 import KeysRow from "./KeysRow";
 import { keyIcons } from "./keyIcons";
 import { keyboardLayout } from "./keyboardLayout";
-import { useTypewriter } from "../context/TypewriterContext";
 import { useRotationOffset } from "../hooks/useRotationOffset";
 
 export default function Keyboard() {
@@ -13,8 +12,6 @@ export default function Keyboard() {
         rotationDegrees: 30,
         ref: keyboardRef,
     });
-
-    const { pressedKeyButton } = useTypewriter();
 
     const rotationDegrees = 30;
 
