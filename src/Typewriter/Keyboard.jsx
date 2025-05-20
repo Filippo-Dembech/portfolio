@@ -1,17 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { classes } from "../utils/classes";
 import KeyButton from "./KeyButton";
 import KeysRow from "./KeysRow";
 import { keyIcons } from "./keyIcons";
 import { keyboardLayout } from "./keyboardLayout";
 import { useTypewriter } from "../context/TypewriterContext";
+import { useRotationOffset } from "../hooks/useRotationOffset";
 
 export default function Keyboard() {
     const keyboardRef = useRef(null);
-    const [height, setHeight] = useState(0);
-    
-    const { pressedKeyButton, setMonitorDepth } = useTypewriter();
-    
+    const [translateZOffset] = useRotationOffset({
+        rotationDegrees: 30,
+        ref: keyboardRef,
+    });
+
+    const { pressedKeyButton } = useTypewriter();
+
     const rotationDegrees = 30;
 
     const keyboardClasses = classes(
@@ -28,27 +32,13 @@ export default function Keyboard() {
         "gap-1.5"
     );
 
-    useEffect(() => {
-        const radians = rotationDegrees * (Math.PI / 180);
-        const monitorDepth = (height / 2) * Math.sin(radians);
-        setMonitorDepth(monitorDepth);
-        const el = keyboardRef.current;
-        if (!el) return;
-
-        const observer = new ResizeObserver((entries) => {
-            for (let entry of entries) {
-                setHeight(entry.contentRect.height);
-            }
-        });
-
-        observer.observe(el);
-
-        return () => observer.disconnect();
-    }, [height, setMonitorDepth]);
-
     return (
         <div
-            style={{ transform: `rotateX(${rotationDegrees}deg)` }}
+            // TranslateZ is used to make the keyButtons clickable.
+            // otherwise part of them would be covered behind the parent div.
+            style={{
+                transform: `translateZ(${translateZOffset}px) rotateX(${rotationDegrees}deg)`,
+            }}
             ref={keyboardRef}
             className={keyboardClasses}
         >

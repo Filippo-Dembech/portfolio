@@ -22,7 +22,6 @@ export default function Monitor() {
 
     return (
         <div
-            style={{ transform: `translateZ(-${monitorDepth}px)` }}
             className={cursorStyle + textStyle}
         >
             {text}
