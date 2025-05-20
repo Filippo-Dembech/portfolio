@@ -1,6 +1,5 @@
 import Keyboard from "./Keyboard";
 import { useTypingEffect } from "../hooks/useTypingEffect";
-import { useTypewriter } from "../context/TypewriterContext";
 import Monitor from "./Monitor";
 
 export default function Typewriter({

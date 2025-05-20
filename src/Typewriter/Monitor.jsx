@@ -3,7 +3,7 @@ import { classes } from "../utils/classes";
 
 export default function Monitor() {
     
-    const { text, monitorDepth } = useTypewriter();
+    const { text } = useTypewriter();
 
     const cursorStyle = classes(
         "after:content-['']",
