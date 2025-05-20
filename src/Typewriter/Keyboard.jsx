@@ -7,13 +7,12 @@ import { keyboardLayout } from "./keyboardLayout";
 
 export default function Keyboard({
     pressedKey,
-    isDeleting,
     monitorDepthSetter,
 }) {
     const keyboardRef = useRef(null);
     const [height, setHeight] = useState(0);
     
-    const degrees = 30;
+    const rotationDegrees = 30;
 
     const keyboardClasses = classes(
         "inline-grid",
@@ -30,7 +29,7 @@ export default function Keyboard({
     );
 
     useEffect(() => {
-        const radians = degrees * (Math.PI / 180);
+        const radians = rotationDegrees * (Math.PI / 180);
         const monitorDepth = (height / 2) * Math.sin(radians);
         monitorDepthSetter(monitorDepth);
         const el = keyboardRef.current;
@@ -49,13 +48,13 @@ export default function Keyboard({
 
     return (
         <div
-            style={{ transform: `rotateX(${degrees}deg)` }}
+            style={{ transform: `rotateX(${rotationDegrees}deg)` }}
             ref={keyboardRef}
             className={keyboardClasses}
         >
             <KeysRow
                 keys={keyboardLayout.firstRow}
-                pressedKey={isDeleting ? keyIcons.back : pressedKey}
+                pressedKey={pressedKey}
             />
             <KeysRow
                 keys={keyboardLayout.secondRow}
