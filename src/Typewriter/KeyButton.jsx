@@ -22,7 +22,8 @@ export default function KeyButton({ button, className }) {
     const keyButtonClasses = classes(
         "transition-colors",
         "bg-orange-50 text-orange-500",
-        "font-custom-fira-code text-fluid font-normal sm:font-bold",
+        "font-custom-fira-code text-fluid",
+        "text-xs",
         "flex items-center justify-center",
         "rounded-lg",
         "border-b-4 sm:border-b-6 lg:border-b-8 border-b-orange-200",

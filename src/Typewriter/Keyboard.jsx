@@ -18,8 +18,9 @@ export default function Keyboard() {
     const keyboardClasses = classes(
         "inline-grid",
         "grid-cols-16",
-        "gap-1.5",
-        "w-[70vw]"
+        "gap-1",
+        "sm:gap-1.5",
+        "w-[70vw]",
     );
 
     const directionsClasses = classes(

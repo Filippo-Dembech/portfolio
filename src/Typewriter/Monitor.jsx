@@ -14,11 +14,14 @@ export default function Monitor() {
 
     const textStyle = classes(
         "text-orange-500",
-        "text-4xl",
+        "text-3xl",
+        "sm:text-4xl",
+        "lg:text-5xl",
         "font-custom-tuffy",
         "uppercase",
         "font-bold"
     );
+    
 
     return (
         <div
