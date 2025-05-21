@@ -17,15 +17,15 @@ export default function Monitor() {
         "text-3xl",
         "sm:text-4xl",
         "lg:text-5xl",
-        //"font-custom-tuffy",
         "uppercase",
-        "font-bold"
+        "font-bold",
+        "font-[Courier]",
     );
     
 
     return (
         <div
-            className={"font-[Courier]" + " " + cursorStyle + textStyle}
+            className={cursorStyle + textStyle}
         >
             {text}
         </div>
