@@ -14,7 +14,7 @@ export const keyboardLayout = {
     { symbol: "9", rowSpan: 2, colSpan: 1, id: 10 },
     { symbol: "0", rowSpan: 2, colSpan: 1, id: 11 },
     { symbol: "'", rowSpan: 2, colSpan: 1, id: 12 },
-    { symbol: "ì", rowSpan: 2, colSpan: 1, id: 13 },
+    { symbol: "?", rowSpan: 2, colSpan: 1, id: 13 },
     { symbol: keyIcons.back, rowSpan: 2, colSpan: 3, id: 14 }
   ],
   secondRow: [

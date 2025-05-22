@@ -14,9 +14,9 @@ export default function Monitor() {
 
     const textStyle = classes(
         "text-orange-500",
-        "text-3xl",
-        "sm:text-4xl",
-        "lg:text-5xl",
+        "text-[2rem]",
+        "sm:text-[3rem]",
+        "lg:text-[4rem]",
         "uppercase",
         "font-bold",
         "font-[Courier]",

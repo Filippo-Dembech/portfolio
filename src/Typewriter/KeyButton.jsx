@@ -23,13 +23,11 @@ export default function KeyButton({ button, style, className }) {
         "transition-colors",
         "bg-orange-50 text-orange-500",
         "font-custom-fira-code text-fluid",
-        "text-xs",
         "flex items-center justify-center",
         "rounded-lg",
         "border-b-4 sm:border-b-6 lg:border-b-8 border-b-orange-200",
         getColSpanStyle(button.colSpan),
         getRowSpanStyle(button.rowSpan),
-        className
     );
 
     return (
@@ -40,7 +38,7 @@ export default function KeyButton({ button, style, className }) {
             animate={isPressed ? "pressed" : "idle"}
             whileTap="pressed"
             transition={keyButtonTransition}
-            className={keyButtonClasses}
+            className={className + " " + keyButtonClasses}
         >
             {button.symbol}
         </motion.span>

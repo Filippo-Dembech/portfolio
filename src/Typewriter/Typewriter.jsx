@@ -19,7 +19,7 @@ export default function Typewriter({
 
     return (
         <div className="flex flex-col justify-center w-[70%] py-[8%]">
-            <div className="transform-3d perspective-distant flex-1 flex items-center">
+            <div className="transform-3d perspective-distant flex-1 flex items-end sm:items-center pb-8">
                 <Monitor />
             </div>
             <div className="transform-3d perspective-distant text-center flex-1">

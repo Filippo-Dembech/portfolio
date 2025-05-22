@@ -49,7 +49,7 @@ export default function Keyboard() {
             <KeysRow keys={keyboardLayout.fifthRow} />
             <div className={directionsClasses} style={{ alignSelf: "center", gridRow: "9 / 11", gridColumn: "15 / 17" }}>
                 <KeyButton
-                    style={{ fontSize: "0.8rem", gridRow: "1 / 3", gridColumn: "1 / 2" }}
+                    style={{ gridRow: "1 / 3", gridColumn: "1 / 2" }}
                     button={{
                         symbol: keyIcons.arrows.left,
                         rowSpan: 1,
@@ -57,7 +57,8 @@ export default function Keyboard() {
                     }}
                 />
                 <KeyButton
-                    style={{ fontSize: "0.8rem", gridRow: "1 / 2", gridColumn: "2 / 3" }}
+                    style={{ gridRow: "1 / 2", gridColumn: "2 / 3" }}
+                    className="bg-blue-300"
                     button={{
                         symbol: keyIcons.arrows.up,
                         rowSpan: 1,
@@ -65,7 +66,7 @@ export default function Keyboard() {
                     }}
                 />
                 <KeyButton
-                    style={{ fontSize: "0.8rem", gridRow: "2 / 3", gridColumn: "2 / 3" }}
+                    style={{ gridRow: "2 / 3", gridColumn: "2 / 3" }}
                     button={{
                         symbol: keyIcons.arrows.down,
                         rowSpan: 1,
@@ -73,7 +74,7 @@ export default function Keyboard() {
                     }}
                 />
                 <KeyButton
-                    style={{ fontSize: "0.8rem", gridRow: "1 / 3", gridColumn: "3 / 4" }}
+                    style={{ gridRow: "1 / 3", gridColumn: "3 / 4" }}
                     button={{
                         symbol: keyIcons.arrows.right,
                         rowSpan: 1,
