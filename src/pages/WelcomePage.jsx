@@ -31,6 +31,7 @@ export default function WelcomePage() {
                         "Press 'Enter'",
                     ]}
                     typingSpeed={90}
+                    delayBeforeType={60}
                 />
             </TypewriterProvider>
         </div>
