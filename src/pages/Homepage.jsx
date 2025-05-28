@@ -4,11 +4,12 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 export default function Homepage() {
     return (
         <div className="p-4 bg-orange-50 min-h-[100dvh] flex flex-col">
-            <h1 className="text-orange-500 font-custom-bebas mb-7 text-[4rem] sm:text-[5rem] md:text-[6rem]">
+            <h1 className="text-orange-500 font-custom-bebas mb-7 text-[4rem] sm:text-center sm:text-[5rem] md:text-[6rem]">
                 My Portfolio
             </h1>
-            <div className="flex flex-col sm:flex-row justify-center items-stretch flex-1 gap-8">
+            <div className="flex flex-col sm:pb-5 sm:flex-row justify-center items-stretch flex-1 gap-8 sm:gap-14">
                 <Navlink
+                    to="/projects"
                     className="text-3xl relative"
                     sideElement={
                         <DotLottieReact
@@ -22,6 +23,7 @@ export default function Homepage() {
                     My Projects
                 </Navlink>
                 <Navlink
+                    to="https://filippo-dembech.github.io/articles/"
                     className="text-3xl relative"
                     sideElement={
                         <DotLottieReact
@@ -35,6 +37,7 @@ export default function Homepage() {
                     My Articles
                 </Navlink>
                 <Navlink
+                    to="/story"
                     className="text-3xl relative"
                     sideElement={
                         <DotLottieReact
@@ -48,6 +51,7 @@ export default function Homepage() {
                     My Story
                 </Navlink>
                 <Navlink
+                    to="/contacts"
                     className="text-3xl relative"
                     sideElement={
                         <DotLottieReact

@@ -527,6 +527,9 @@
   .items-stretch {
     align-items: stretch;
   }
+  .justify-around {
+    justify-content: space-around;
+  }
   .justify-between {
     justify-content: space-between;
   }
@@ -974,10 +977,30 @@
       gap: calc(var(--spacing) * 1.5);
     }
   }
+  .sm\:gap-14 {
+    @media (width >= 40rem) {
+      gap: calc(var(--spacing) * 14);
+    }
+  }
   .sm\:border-b-6 {
     @media (width >= 40rem) {
       border-bottom-style: var(--tw-border-style);
       border-bottom-width: 6px;
+    }
+  }
+  .sm\:pb-3 {
+    @media (width >= 40rem) {
+      padding-bottom: calc(var(--spacing) * 3);
+    }
+  }
+  .sm\:pb-5 {
+    @media (width >= 40rem) {
+      padding-bottom: calc(var(--spacing) * 5);
+    }
+  }
+  .sm\:text-center {
+    @media (width >= 40rem) {
+      text-align: center;
     }
   }
   .sm\:text-\[3rem\] {
