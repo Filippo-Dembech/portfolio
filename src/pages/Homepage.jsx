@@ -23,7 +23,7 @@ export default function Homepage() {
                     My Projects
                 </Navlink>
                 <Navlink
-                    to="https://filippo-dembech.github.io/articles/"
+                    external="https://filippo-dembech.github.io/articles/"
                     sideElement={
                         <DotLottieReact
                             className="absolute top-1/2 -translate-y-1/2 right-4 w-40 sm:right-1/2 sm:translate-x-1/2 sm:scale-120 mix-blend-luminosity"
