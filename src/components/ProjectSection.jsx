@@ -1,23 +1,26 @@
-import { Link } from "react-router-dom";
+import ExternalLink from "./ExternalLink";
 
 export default function ProjectSection({
     title,
     description,
     img,
     projectLink,
-    codeLink
+    codeLink,
 }) {
     return (
-        <section>
+        <section className="bg-orange-200">
             <div>
-                <h2>{title}</h2>
-                <p>{description}</p>
+                <h2 className="text-[2rem] text-orange-500 font-custom-tuffy">{title}</h2>
+                <p className="font-custom-lato font-light">{description}</p>
                 <div>
-                    <a href={projectLink} target="_blank" rel="noopener noreferrer">View Project</a>
-                    <a href={codeLink}>View Code</a>
+                    <ExternalLink href={projectLink}>View Project</ExternalLink>
+                    <ExternalLink href={codeLink}>View Code</ExternalLink>
                 </div>
             </div>
-            <img src={img} alt="project-img" />
+            <img
+                src={img}
+                alt="project-img"
+            />
         </section>
-    )
+    );
 }

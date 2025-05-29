@@ -6,6 +6,7 @@
     --font-custom-tuffy: "Tuffy", sans-serif;
     --font-custom-roboto: "Roboto Mono", monospace;
     --font-custom-fira-code: "Fira Code", monospace;
+    --font-custom-lato: "Lato", sans-serif;
     --text-fluid: clamp(5px, 3vw, 1.2rem);
 
     --animate-blink: blink 1s step-start infinite;

@@ -9,7 +9,9 @@ export default function ProjectsPage() {
                 <ProjectSection
                     title="Red Cross Crammer"
                     description="A simple webpage designed to help Red Cross students memorizing procedures."
+                    img="./cri-crammer-img.png"
                     projectLink="https://filippo-dembech.github.io/cri-trainer/"
+                    codeLink="https://github.com/Filippo-Dembech/cri-trainer"
                 />
             </div>
         </div>
