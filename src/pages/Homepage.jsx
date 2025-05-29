@@ -4,7 +4,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Homepage() {
     return (
-        <div className="p-4 bg-orange-50 min-h-[100dvh] flex flex-col">
+        <div className="pb-4 bg-orange-50 min-h-[100dvh] flex flex-col">
             <Header>
                 My Portfolio
             </Header>
