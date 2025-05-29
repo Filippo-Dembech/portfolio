@@ -1,5 +1,5 @@
-export default function ExternalLink({ href, ...props }) {
+export default function ExternalLink({ href, className, ...props }) {
     return (
-        <a {...props} href={href} target="_blank" rel="noopener noreferrer">{props.children}</a>
+        <a className={className} href={href} target="_blank" rel="noopener noreferrer">{props.children}</a>
     )
 }
