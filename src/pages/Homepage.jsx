@@ -4,11 +4,11 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Homepage() {
     return (
-        <div className="pb-4 bg-orange-50 min-h-[100dvh] flex flex-col">
+        <div className="p-3 bg-orange-50 min-h-[100dvh] flex flex-col overflow-hidden">
             <Header>
                 My Portfolio
             </Header>
-            <div className="flex flex-col sm:pb-5 sm:flex-row justify-center items-stretch flex-1 gap-8 sm:gap-14">
+            <div className="sm:max-w-[650px] sm:m-auto flex flex-col sm:flex-row justify-center items-stretch flex-1 gap-8">
                 <Navlink
                     to="/projects"
                     sideElement={
