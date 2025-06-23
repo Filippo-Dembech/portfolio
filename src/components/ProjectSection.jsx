@@ -46,10 +46,9 @@ export default function ProjectSection({
                 <div className="relative mb-3 sm:self-center md:flex-1/2">
                     <img
                         src={img}
-                        className="rounded-lg grayscale-100 mix-blend-hard-light sm:justify-self-center"
+                        className="rounded-xl"
                         alt="project-img"
                     />
-                    <div class="rounded-lg absolute inset-0 bg-orange-500 opacity-50 pointer-events-none"></div>
                 </div>
             )}
         </motion.section>
