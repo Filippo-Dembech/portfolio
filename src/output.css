@@ -765,6 +765,22 @@
       }
     }
   }
+  .group-hover\:translate-x-5 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-translate-x: calc(var(--spacing) * 5);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .group-hover\:translate-x-10 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-translate-x: calc(var(--spacing) * 10);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
   .group-hover\:scale-150 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -779,6 +795,13 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         rotate: -10deg;
+      }
+    }
+  }
+  .group-hover\:rotate-\[10deg\] {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        rotate: 10deg;
       }
     }
   }
@@ -1051,6 +1074,16 @@
   .sm\:text-\[5rem\] {
     @media (width >= 40rem) {
       font-size: 5rem;
+    }
+  }
+  .sm\:group-hover\:-translate-x-10 {
+    @media (width >= 40rem) {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          --tw-translate-x: calc(var(--spacing) * -10);
+          translate: var(--tw-translate-x) var(--tw-translate-y);
+        }
+      }
     }
   }
   .md\:flex-1\/2 {
