@@ -1,10 +1,11 @@
 import Header from "../components/Header";
+import LottieIcon from "../components/LottieIcon";
 import Navlink from "../components/Navlink";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Homepage() {
     return (
-        <div className="p-3 bg-orange-50 min-h-[100dvh] flex flex-col overflow-hidden">
+        <div className="p-3 pb-8 bg-orange-50 min-h-[100dvh] flex flex-col overflow-hidden">
             <Header>
                 My Portfolio
             </Header>
@@ -12,11 +13,11 @@ export default function Homepage() {
                 <Navlink
                     to="/projects"
                     sideElement={
-                        <DotLottieReact
-                            className="absolute top-1/2 -translate-y-1/2 right-[-50px] w-full max-w-[350px] sm:right-0 sm:scale-400 mix-blend-darken"
-                            src="./projects.lottie"
-                            loop
-                            autoplay
+                        <LottieIcon 
+                             className="absolute top-1/2 -translate-y-1/2 right-[-50px] w-full max-w-[350px] sm:right-0 sm:scale-400 mix-blend-darken"
+                             src="/projects.lottie"
+                             loop
+                             autoplay
                         />
                     }
                 >
@@ -25,7 +26,7 @@ export default function Homepage() {
                 <Navlink
                     external="https://filippo-dembech.github.io/articles/"
                     sideElement={
-                        <DotLottieReact
+                        <LottieIcon
                             className="absolute top-1/2 -translate-y-1/2 right-4 w-40 sm:right-1/2 sm:translate-x-1/2 sm:scale-120 mix-blend-luminosity"
                             src="./articles.lottie"
                             loop
@@ -38,7 +39,7 @@ export default function Homepage() {
                 <Navlink
                     to="/story"
                     sideElement={
-                        <DotLottieReact
+                        <LottieIcon
                             className="absolute top-1/2 -translate-y-1/2 right-[-20px] w-1/2 max-w-[200px] rotate-20 sm:right-0 sm:scale-400 sm:rotate-20 mix-blend-darken opacity-85"
                             src="./story.lottie"
                             loop
