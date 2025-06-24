@@ -44,15 +44,9 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
-    const navigate = useNavigate();
-
     return (
         <HomepageButton>
             <div className=" bg-orange-50 min-h-[100dvh]">
-                <BiLeftArrowCircle
-                    className="text-orange-500 w-10 h-10 mt-3 ml-3 sm:absolute sm:top-3 sm:left-3 cursor-pointer"
-                    onClick={() => navigate("/home")}
-                />
                 <Header>My Projects</Header>
                 <div className="flex flex-col odd:bg-orange-200 even:bg-orange-50">
                     {projects.map((project) => (
