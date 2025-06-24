@@ -13,7 +13,7 @@ const keyButtonVariants = {
 };
 const keyButtonTransition = { type: "spring", duration: 0.1 };
 
-export default function KeyButton({ button, style, className }) {
+export default function KeyButton({ button, style, className, onClick }) {
     
     const { pressedKeyButton } = useTypewriter();
     
@@ -31,7 +31,8 @@ export default function KeyButton({ button, style, className }) {
     );
 
     return (
-        <motion.span
+        <motion.button
+            onClick={onClick}
             style={style}
             variants={keyButtonVariants}
             initial="idle"
@@ -41,6 +42,6 @@ export default function KeyButton({ button, style, className }) {
             className={className + " " + keyButtonClasses}
         >
             {button.symbol}
-        </motion.span>
+        </motion.button>
     );
 }
