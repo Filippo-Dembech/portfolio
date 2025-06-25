@@ -48,8 +48,9 @@ export default function ProjectsPage() {
             <div className=" bg-orange-50 min-h-[100dvh]">
                 <Header>My Projects</Header>
                 <div className="flex flex-col odd:bg-orange-200 even:bg-orange-50">
-                    {projects.map((project) => (
+                    {projects.map((project, i) => (
                         <ProjectSection
+                            key={`${project.title}-${i}`}
                             title={project.title}
                             description={project.description}
                             img={project.img}
