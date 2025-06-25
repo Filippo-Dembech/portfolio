@@ -3,7 +3,7 @@ import WelcomePage from "./pages/WelcomePage";
 import Homepage from './pages/Homepage/Homepage';
 import ProjectsPage from './pages/ProjectsPage';
 import StoryPage from './pages/StoryPage/StoryPage';
-import ContactsPage from './pages/ContactsPage';
+import ContactsPage from './pages/ContactsPage/ContactsPage';
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
