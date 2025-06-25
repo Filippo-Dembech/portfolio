@@ -36,6 +36,7 @@ export default function Homepage() {
                     <HomepageLink
                         to={link.to}
                         iconSrc={link.iconSrc}
+                        external={link.external}
                         lottiClassName={link.lottiClassName}
                     >
                         {link.title}
