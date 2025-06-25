@@ -5,7 +5,6 @@ import Title from "../../components/Title";
 import LanguagesStoryline from "./LanguagesStoryline";
 import CodingApproaches from "./CodingApproaches";
 
-
 export default function StoryPage() {
     const navigate = useNavigate();
     return (
