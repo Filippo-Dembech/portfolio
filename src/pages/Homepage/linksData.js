@@ -1,4 +1,4 @@
-const links =  [
+const linksData =  [
     {
         title: "My Projects",
         to: "/projects",
@@ -29,4 +29,4 @@ const links =  [
     },
 ];
 
-export default links;
+export default linksData;

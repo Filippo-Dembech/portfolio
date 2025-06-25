@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import { classes } from "../../utils/classes";
 import HomepageLink from "./HomepageLink";
-import links from "./links";
+import linksData from "./linksData";
 
 
 export default function Homepage() {
@@ -32,7 +32,7 @@ export default function Homepage() {
         <div className={pageClassName}>
             <Header>My Portfolio</Header>
             <div className={containerClassName}>
-                {links.map((link, i) => (
+                {linksData.map((link, i) => (
                     <HomepageLink
                         to={link.to}
                         iconSrc={link.iconSrc}
