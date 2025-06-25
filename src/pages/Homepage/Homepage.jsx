@@ -3,7 +3,6 @@ import { classes } from "../../utils/classes";
 import HomepageLink from "./HomepageLink";
 import linksData from "./linksData";
 
-
 export default function Homepage() {
     
     const pageClassName = classes(
