@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import ExternalLink from "./ExternalLink";
 import { motion, useInView } from "motion/react";
+import Title from '../components/Title';
 
 export default function ProjectSection({
     title,
@@ -22,10 +23,8 @@ export default function ProjectSection({
             className={`flex flex-col p-7 gap-8 sm:p-15 ${className}`}
         >
             <div className="flex flex-col gap-5 md:flex-1/2">
-                <h2 className="text-[2rem] text-orange-500 font-custom-tuffy">
-                    {title}
-                </h2>
-                <p className="font-custom-lato font-light">{description}</p>
+                <Title h={2} size="2rem">{title}</Title>
+                <p className="font-custom-tuffy">{description}</p>
                 <div className="">
                     {projectLink && (
                         <ExternalLink

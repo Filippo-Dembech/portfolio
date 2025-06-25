@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import CardFlip from "../components/CardFlip";
 import Header from "../components/Header";
 import HomepageButton from "../components/HomepageButton";
+import Title from '../components/Title';
 import {
     VerticalTimeline,
     VerticalTimelineElement,
@@ -31,9 +32,7 @@ export default function StoryPage() {
             <Header>My Story</Header>
             <div className="px-4 max-w-[800px] m-auto flex flex-col gap-5">
                 <section>
-                    <h2 className="text-orange-500 font-bold text-[2rem] font-custom-fira-code">
-                        FIRST TIME SEEN CODE
-                    </h2>
+                    <Title h={2} size="2rem">FIRST TIME SEEN CODE</Title>
                     <div className="font-custom-tuffy">
                         <p>
                             Back in the day, I was working for my dad. My job
@@ -58,9 +57,7 @@ export default function StoryPage() {
                     </div>
                 </section>
                 <section>
-                    <h2 className="text-orange-500 font-bold text-[2rem] font-custom-fira-code">
-                        LANGUAGES I KNOW
-                    </h2>
+                    <Title h={2} size="2rem">LANGUAGES I KNOW</Title>
 
                     <VerticalTimeline>
                         <VerticalTimelineElement
@@ -171,9 +168,7 @@ export default function StoryPage() {
                     </VerticalTimeline>
                 </section>
                 <section>
-                    <h2 className="text-orange-500 font-bold text-[2rem] font-custom-fira-code">
-                        CODING APPROACHES
-                    </h2>
+                    <Title h={2} size="2rem"> CODING APPROACHES</Title>
                     <div className="flex flex-col sm:flex-row sm:flex-wrap items-center py-8 justify-center gap-8">
                         <CardFlip
                             front={<FrontCard>TDD</FrontCard>}
@@ -312,9 +307,7 @@ export default function StoryPage() {
                     </div>
                 </section>
                 <section>
-                    <h2 className="text-orange-500 font-bold text-[2rem] font-custom-fira-code">
-                        WHAT ELSE?
-                    </h2>
+                    <Title h={2} size="2rem">WHAT ELSE?</Title>
                     <div>
                         Ok, enough chit-chat! Do you want to know how I work? Check out my projects <button className="cursor-pointer text-orange-500" onClick={() => navigate("/projects")}>HERE</button>.
                     </div>
