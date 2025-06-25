@@ -1,8 +1,6 @@
-import { BiLeftArrowCircle } from "react-icons/bi";
 import Header from "../components/Header";
 import HomepageButton from "../components/HomepageButton";
 import ProjectSection from "../components/ProjectSection";
-import { useNavigate } from "react-router-dom";
 
 const projects = [
     {
