@@ -20,7 +20,7 @@ export default function Keyboard() {
         "grid-cols-16",
         "gap-1",
         "w-[70vw]",
-        "sm:gap-1.5",
+        "sm:gap-1.5"
     );
 
     const directionsClasses = classes(
@@ -29,7 +29,7 @@ export default function Keyboard() {
         "grid-rows-2",
         "gap-0.5",
         "col-span-2",
-        "sm:gap-1",
+        "sm:gap-1"
     );
 
     return (
@@ -40,14 +40,21 @@ export default function Keyboard() {
                 transform: `translateZ(${translateZOffset}px) rotateX(${rotationDegrees}deg)`,
             }}
             ref={keyboardRef}
-            className={keyboardClasses}
+            className="inline-grid grid-cols-16 gap-1 w-[70vw] sm:gap-1.5"
         >
             <KeysRow keys={keyboardLayout.firstRow} />
             <KeysRow keys={keyboardLayout.secondRow} />
             <KeysRow keys={keyboardLayout.thirdRow} />
             <KeysRow keys={keyboardLayout.fourthRow} />
             <KeysRow keys={keyboardLayout.fifthRow} />
-            <div className={directionsClasses} style={{ alignSelf: "center", gridRow: "9 / 11", gridColumn: "15 / 17" }}>
+            <div
+                className="grid grid-cols-3 grid-rows-2 gap-0.5 col-span-2 sm:gap-1"
+                style={{
+                    alignSelf: "center",
+                    gridRow: "9 / 11",
+                    gridColumn: "15 / 17",
+                }}
+            >
                 <KeyButton
                     style={{ gridRow: "1 / 3", gridColumn: "1 / 2" }}
                     button={{

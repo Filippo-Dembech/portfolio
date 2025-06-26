@@ -45,7 +45,7 @@ export default function KeyButton({ button, style, className, onClick }) {
             animate={isPressed ? "pressed" : "idle"}
             whileTap="pressed"
             transition={keyButtonTransition}
-            className={className + " " + keyButtonClasses}
+            className={className + "transition-colors bg-orange-50 text-orange-500 font-custom-fira-code text-fluid flex items-center justify-center rounded-lg border-b-4 border-b-orange-200 sm:border-b-6 lg:border-b-8"}
         >
             {button.symbol}
         </motion.button>

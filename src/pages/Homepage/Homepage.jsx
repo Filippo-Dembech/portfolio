@@ -28,9 +28,9 @@ export default function Homepage() {
     )
 
     return (
-        <div className={pageClassName}>
+        <div className="p-3 pb-8 bg-orange-50 min-h-[100dvh] flex flex-col overflow-hidden">
             <Header>My Portfolio</Header>
-            <div className={containerClassName}>
+            <div className="sm:max-w-[650px] sm:m-auto flex flex-col sm:flex-row justify-center items-stretch flex-1 gap-8">
                 {linksData.map((link, i) => (
                     <HomepageLink
                         to={link.to}

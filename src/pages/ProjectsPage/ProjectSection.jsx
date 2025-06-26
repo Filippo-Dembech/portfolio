@@ -47,7 +47,7 @@ export default function ProjectSection({
     const isInView = useInView(contentRef, { once: true, margin: "-100px" });
 
     return (
-        <InViewSlider className={sliderClassName}>
+        <InViewSlider className="flex flex-col p-7 gap-8 overflow-hidden relative sm:p-15 odd:bg-orange-200 even:bg-orange-50 md:odd:flex-row md:even:flex-row-reverse md:items-center md:gap-20 group">
             <motion.div
                 ref={contentRef}
                 initial={{ opacity: 0, x: 50 }}

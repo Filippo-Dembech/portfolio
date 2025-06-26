@@ -15,7 +15,7 @@ export default function CodingApproaches() {
     );
 
     return (
-        <div className={containerClassName}>
+        <div className="flex flex-col sm:flex-row sm:flex-wrap items-center py-8 justify-center gap-8">
             <ApproachCard
                 frontTitle="TDD"
                 backTitle="Test-Driven Development"
