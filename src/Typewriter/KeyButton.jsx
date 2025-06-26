@@ -21,11 +21,17 @@ export default function KeyButton({ button, style, className, onClick }) {
 
     const keyButtonClasses = classes(
         "transition-colors",
-        "bg-orange-50 text-orange-500",
-        "font-custom-fira-code text-fluid",
-        "flex items-center justify-center",
+        "bg-orange-50",
+        "text-orange-500",
+        "font-custom-fira-code",
+        "text-fluid",
+        "flex items-center",
+        "justify-center",
         "rounded-lg",
-        "border-b-4 sm:border-b-6 lg:border-b-8 border-b-orange-200",
+        "border-b-4",
+        "border-b-orange-200",
+        "sm:border-b-6",
+        "lg:border-b-8",
         getColSpanStyle(button.colSpan),
         getRowSpanStyle(button.rowSpan),
     );

@@ -9,17 +9,17 @@ export default function Monitor() {
         "after:content-['']",
         "after:border-r-4",
         "after:animate-blink",
-        "after:border-r-orange-500"
+        "after:border-r-orange-500",
     );
 
     const textStyle = classes(
         "text-orange-500",
         "text-[2rem]",
-        "sm:text-[3rem]",
-        "lg:text-[4rem]",
         "uppercase",
         "font-bold",
         "font-[Courier]",
+        "sm:text-[3rem]",
+        "lg:text-[4rem]",
     );
     
 
