@@ -15,7 +15,7 @@ export default function Contact({ icon, link, text, onClick }) {
     return (
         <a
             href={link}
-            className="flex gap-3 items-center transition-colors duration-200 hover:text-orange-500 cursor-pointer"
+            className={contactClassName}
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClick}

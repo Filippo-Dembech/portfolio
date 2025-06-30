@@ -42,12 +42,12 @@ export default function ApproachCard({
 
     return (
         <Card>
-            <Card.Front className="flex items-center p-8 text-center justify-center h-full rounded-xl bg-linear-65 from-orange-500 to-orange-600 text-white font-bold font-custom-fira-code text-3xl">{frontTitle}</Card.Front>
-            <Card.Back className="h-full rounded-xl bg-white font-custom-lato">
+            <Card.Front className={frontClassName}>{frontTitle}</Card.Front>
+            <Card.Back className={backClassName}>
                 <div className="p-5">
                     {renderBackTitle?.() || (
                         <Navlink external={link}>
-                            <h2 className="text-2xl transition-colors duration-300 hover:text-orange-700">
+                            <h2 className={titleClassName}>
                                 {backTitle || frontTitle}
                             </h2>
                         </Navlink>

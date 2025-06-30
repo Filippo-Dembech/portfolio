@@ -15,7 +15,7 @@ export default function WelcomePage() {
         };
         document.addEventListener("keydown", callback);
         return () => document.removeEventListener("keydown", callback);
-    }, []);
+    }, [navigate]);
 
     return (
         <div className="bg-orange-100 min-h-[100dvh] flex justify-center">
