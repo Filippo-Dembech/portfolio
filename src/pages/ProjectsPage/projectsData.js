@@ -27,12 +27,14 @@ const projectsData = [
         title: "Powershell Prompt Profile",
         description:
             "A custom PowerShell profile I built to streamline terminal navigation, automate repetitive tasks, and speed up everyday OS operations.",
+        img: "profile-project-img.png",
         codeLink: "https://github.com/Filippo-Dembech/MyProfile",
     },
     {
         title: "Usefiltex",
         description:
             "A lightweight and flexible React hook for filtering object lists in a declarative way. Available as an npm package it helps the client code to filter records, cutting down on all the filter() and map() methods.",
+        img: "spanflex-project-img.png",
         projectLink: "https://www.npmjs.com/package/usefiltex",
         codeLink: "https://github.com/Filippo-Dembech/useFilter",
     },
