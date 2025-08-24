@@ -13,11 +13,7 @@ export default function ProjectsPage() {
                     {projectsData.map((project, i) => (
                         <ProjectSection
                             key={`${project.title}-${i}`}
-                            title={project.title}
-                            description={project.description}
-                            img={project.img}
-                            projectLink={project.projectLink}
-                            codeLink={project.codeLink}
+                            project={project}
                         />
                     ))}
                 </div>

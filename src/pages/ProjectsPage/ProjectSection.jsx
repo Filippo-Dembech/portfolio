@@ -6,24 +6,18 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 export default function ProjectSection({
-    title,
-    description,
-    img,
-    projectLink,
-    codeLink,
+    project,
 }) {
     const renderProjectLink = () => (
-        <ExternalLink href={projectLink}>View Project</ExternalLink>
+        <ExternalLink href={project.projectLink}>View Project</ExternalLink>
     );
-    
-    console.log(process.env.PUBLIC_URL);
 
     const renderImg = () => (
         <div className="relative mb-3 sm:self-center md:flex-1/2">
             <img
-                src={`${process.env.PUBLIC_URL}/${img}`}
+                src={`${process.env.PUBLIC_URL}/${project.img}`}
                 className="rounded-xl"
-                alt={`${title.toLowerCase().split(" ").join("-")}-img`}
+                alt={`${project.title.toLowerCase().split(" ").join("-")}-img`}
             />
         </div>
     );
@@ -55,21 +49,24 @@ export default function ProjectSection({
                 initial={{ opacity: 0, x: 50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 h-full flex flex-col gap-5 md:flex-1/2"
+                className="relative z-10 h-full flex flex-col md:flex-1/2"
             >
                 <Title
                     h={2}
                     size="2rem"
                 >
-                    {title}
+                    {project.title}
                 </Title>
-                <p className="font-custom-tuffy">{description}</p>
+                <div >
+                    <span className="text-xs flex gap-3">Tech Stack: {project.techStack.map(tech => (<span className="text-orange-400 font-bold">{tech}</span>))}</span>
+                </div>
+                <p className="font-custom-tuffy my-5">{project.description}</p>
                 <div>
-                    {projectLink && renderProjectLink()}
-                    <ExternalLink href={codeLink}>View Code</ExternalLink>
+                    {project.projectLink && renderProjectLink()}
+                    <ExternalLink href={project.codeLink}>View Code</ExternalLink>
                 </div>
             </motion.div>
-            {img && renderImg()}
+            {project.img && renderImg()}
         </InViewSlider>
     );
 }
