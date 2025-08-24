@@ -16,6 +16,7 @@ export default function ApproachCard({
         "hover:text-orange-700"
     );
 
+    /*
     const frontClassName = classes(
         "flex",
         "items-center",
@@ -27,6 +28,24 @@ export default function ApproachCard({
         "bg-linear-65",
         "from-orange-500",
         "to-orange-600",
+        "text-white",
+        "font-bold",
+        "font-custom-fira-code",
+        "text-3xl"
+    );
+    */
+    const frontClassName = classes(
+        "flex",
+        "items-center",
+        "p-8",
+        "text-center",
+        "justify-center",
+        "h-full",
+        "rounded-xl",
+        "bg-gradient-to-r",
+        "from-orange-500",
+        "to-orange-600",
+        "to-65%",
         "text-white",
         "font-bold",
         "font-custom-fira-code",

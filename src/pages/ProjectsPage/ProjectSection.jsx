@@ -15,13 +15,15 @@ export default function ProjectSection({
     const renderProjectLink = () => (
         <ExternalLink href={projectLink}>View Project</ExternalLink>
     );
+    
+    console.log(process.env.PUBLIC_URL);
 
     const renderImg = () => (
         <div className="relative mb-3 sm:self-center md:flex-1/2">
             <img
-                src={img}
+                src={`${process.env.PUBLIC_URL}/${img}`}
                 className="rounded-xl"
-                alt="project-img"
+                alt={`${title.toLowerCase().split(" ").join("-")}-img`}
             />
         </div>
     );

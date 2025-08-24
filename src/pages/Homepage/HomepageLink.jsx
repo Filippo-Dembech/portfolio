@@ -27,7 +27,6 @@ export default function HomepageLink({ to, external, iconSrc, children, lottiCla
         "inline-block",
         "transform",
         "duration-200",
-        "text-blue-300",
         "group-hover:rotate-[-10deg]",
         "origin-bottom-left",
         "group-hover:text-orange-200",
