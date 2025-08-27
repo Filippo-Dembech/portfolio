@@ -1,5 +1,14 @@
 const projectsData = [
     {
+        title: "This Portfolio",
+        description:
+            "I made this portfolio from scratch and I am quite proud of it. It is one of my favourite projects. I hope you like it :)",
+        img: "portfolio-img.png",
+        techStack: ["React", "React Motion", "React Router", "TailwindCSS", "DotLottie"],
+        projectLink: "https://filippo-dembech.github.io/portfolio/",
+        codeLink: "https://github.com/Filippo-Dembech/portfolio",
+    },
+    {
         title: "Red Cross Crammer",
         description:
             "An interactive study aid designed for Red Cross volunteers. It helps quickly memorizing emergency procedures through a clean, focused interface. Perfect for brushing up on protocols.",
@@ -22,7 +31,7 @@ const projectsData = [
         description:
             "A brain-training game designed to challenge and expand your short-term memory. Spanflex presents an increasingly difficult sequence of numbers, testing how far you can stretch your memory span.",
         img: "spanflex-img.png",
-        techStack: ["React", "Context API", "Tailwind"],
+        techStack: ["React", "Context API", "TailwindCSS"],
         projectLink: "https://filippo-dembech.github.io/Spanflex/",
         codeLink: "https://github.com/Filippo-Dembech/Spanflex",
     },
