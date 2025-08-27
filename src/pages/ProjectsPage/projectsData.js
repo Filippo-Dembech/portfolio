@@ -43,6 +43,15 @@ const projectsData = [
         projectLink: "https://www.npmjs.com/package/usefiltex",
         codeLink: "https://github.com/Filippo-Dembech/useFilter",
     },
+    {
+        title: "Projecthor",
+        description:
+            "Save, manage, and run project setup commands automatically from the CLI.",
+        img: "projecthor-img.png",
+        techStack: ["React", "Ink", "Typescript", "Execa", "Meow", "Lowdb"],
+        projectLink: "https://www.npmjs.com/package/projecthor",
+        codeLink: "https://github.com/Filippo-Dembech/Projecthor",
+    },
 ];
 
 export default projectsData;

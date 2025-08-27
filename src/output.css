@@ -1366,6 +1366,10 @@ video {
 }
 
 @media (min-width: 768px){
+  .md\:flex-1{
+    flex: 1 1 0%;
+  }
+
   .md\:items-center{
     align-items: center;
   }

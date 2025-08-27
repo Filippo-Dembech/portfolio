@@ -13,7 +13,7 @@ export default function ProjectSection({
     );
 
     const renderImg = () => (
-        <div className="relative mb-3 sm:self-center md:flex-1/2">
+        <div className="relative mb-3 sm:self-center md:flex-1">
             <img
                 src={`${process.env.PUBLIC_URL}/${project.img}`}
                 className="rounded-xl"
@@ -49,7 +49,7 @@ export default function ProjectSection({
                 initial={{ opacity: 0, x: 50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 h-full flex flex-col md:flex-1/2"
+                className="relative z-10 h-full flex flex-col md:flex-1"
             >
                 <Title
                     h={2}
