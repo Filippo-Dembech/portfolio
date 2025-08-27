@@ -18,6 +18,14 @@ const projectsData = [
         codeLink: "https://github.com/Filippo-Dembech/cri-trainer",
     },
     {
+        title: "Freeuron",
+        description: "A CLI app to capture and categorize your thoughts without breaking your workflow.",
+        img: "freeuron-img.png",
+        techStack: ["React", "Ink", "Lowdb"],
+        projectLink:"https://www.npmjs.com/package/freeuron",  
+        codeLink: "https://github.com/Filippo-Dembech/Freeuron",
+    },
+    {
         title: "Tic Tac Toe",
         description:
             "A classic game of tic-tac-toe you can play in the browser with a friend. it's a fun little project that showcases basic game logic and player interactions.",
