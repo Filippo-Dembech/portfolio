@@ -1,6 +1,6 @@
-import Card from "../../components/Card";
 import { classes } from "../../utils/classes";
 import Navlink from "../../components/Navlink";
+import TestCard from "../../components/Card";
 
 export default function ApproachCard({
     frontTitle,
@@ -9,6 +9,13 @@ export default function ApproachCard({
     link,
     description,
 }) {
+    
+    const cardClassName = classes(
+        "w-[300px]",
+        "h-[250px]",
+        "cursor-pointer"
+    )
+
     const titleClassName = classes(
         "text-2xl",
         "transition-colors",
@@ -16,24 +23,6 @@ export default function ApproachCard({
         "hover:text-orange-700"
     );
 
-    /*
-    const frontClassName = classes(
-        "flex",
-        "items-center",
-        "p-8",
-        "text-center",
-        "justify-center",
-        "h-full",
-        "rounded-xl",
-        "bg-linear-65",
-        "from-orange-500",
-        "to-orange-600",
-        "text-white",
-        "font-bold",
-        "font-custom-fira-code",
-        "text-3xl"
-    );
-    */
     const frontClassName = classes(
         "flex",
         "items-center",
@@ -60,9 +49,9 @@ export default function ApproachCard({
     );
 
     return (
-        <Card>
-            <Card.Front className={frontClassName}>{frontTitle}</Card.Front>
-            <Card.Back className={backClassName}>
+        <TestCard className={cardClassName}>
+            <TestCard.Front className={frontClassName}>{frontTitle}</TestCard.Front>
+            <TestCard.Back className={backClassName}>
                 <div className="p-5">
                     {renderBackTitle?.() || (
                         <Navlink external={link}>
@@ -73,7 +62,7 @@ export default function ApproachCard({
                     )}
                     <p className="pt-3">{description}</p>
                 </div>
-            </Card.Back>
-        </Card>
+            </TestCard.Back>
+        </TestCard>
     );
 }

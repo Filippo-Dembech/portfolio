@@ -1,54 +1,52 @@
-import { createContext } from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
 
-const CardContext = createContext();
+const cardStyle = {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    backfaceVisibility: "hidden",
+};
 
-function Card({ children }) {
+function Card({children, className}) {
     const [isFlipped, setIsFlipped] = useState(false);
-    const [isAnimating, setIsAnimating] = useState(false);
 
-    const handleFlip = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setIsFlipped((prev) => !prev);
+    const outerCardStyle = {
+        backgroundColor: "transparent",
+        perspective: "1000px",
+    };
+
+    const innerCardStyle = {
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        transition: "transform 0.6s",
+        transformStyle: "preserve-3d",
+        transform: isFlipped ? "rotateY(180deg)" : "",
     };
 
     return (
-        <CardContext.Provider value={{ handleFlip }}>
-            <div
-                className="cursor-pointer rounded-xl transition-all hover:scale-105"
-                onClick={handleFlip}
-            >
-                <div className="w-[300px] h-[250px] rounded-xl perspective-distant">
-                    <motion.div
-                        className="relative w-full h-full duration-200 rounded-xl transform-3d"
-                        animate={{ rotateY: isFlipped ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                        onAnimationComplete={() => setIsAnimating(false)}
-                    >
-                        {children}
-                    </motion.div>
-                </div>
+        <div
+            style={outerCardStyle}
+            className={className}
+            onClick={() => setIsFlipped((curr) => !curr)}
+        >
+            <div style={innerCardStyle}>
+                {children}
             </div>
-        </CardContext.Provider>
-    );
-}
-
-function Front({ children, className }) {
-    return (
-        <div className={`absolute w-full h-full rounded-xl shadow-lg backface-hidden ${className}`}>
-            {children}
         </div>
     );
 }
 
-function Back({ children, className }) {
-    return (
-        <div className={`absolute w-full h-full rounded-xl shadow-lg rotate-y-180 backface-hidden ${className}`}>
-            {children}
-        </div>
-    );
+function Front({children, className}) {
+    return <div style={cardStyle} className={className}>{children}</div>;
+}
+
+function Back({children, className}) {
+    const backCardStyle = {
+        transform: "rotateY(180deg)",
+    };
+
+    return <div style={{ ...cardStyle, ...backCardStyle }} className={className}>{children}</div>;
 }
 
 Card.Front = Front;

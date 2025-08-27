@@ -11,7 +11,7 @@ export default function CodingApproaches() {
         "items-center",
         "py-8",
         "justify-center",
-        "gap-8"
+        "gap-8",
     );
 
     return (
