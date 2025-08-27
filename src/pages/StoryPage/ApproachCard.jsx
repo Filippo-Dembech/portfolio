@@ -10,10 +10,12 @@ export default function ApproachCard({
     description,
 }) {
     
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    
     const cardClassName = classes(
         "w-[300px]",
         "h-[250px]",
-        "cursor-pointer"
+        "cursor-pointer",
     )
 
     const titleClassName = classes(
@@ -38,19 +40,21 @@ export default function ApproachCard({
         "text-white",
         "font-bold",
         "font-custom-fira-code",
-        "text-3xl"
+        "text-3xl",
+        "shadow-xl",
     );
 
     const backClassName = classes(
         "h-full",
         "rounded-xl",
         "bg-white",
-        "font-custom-lato"
+        "font-custom-lato",
+        "shadow-xl"
     );
 
     return (
         <TestCard className={cardClassName}>
-            <TestCard.Front className={frontClassName}>{frontTitle}</TestCard.Front>
+            <TestCard.Front className={frontClassName}>{frontTitle} {isMobile ? "flip" : ""}</TestCard.Front>
             <TestCard.Back className={backClassName}>
                 <div className="p-5">
                     {renderBackTitle?.() || (
