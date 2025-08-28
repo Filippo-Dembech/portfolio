@@ -9,6 +9,13 @@ const projectsData = [
         codeLink: "https://github.com/Filippo-Dembech/portfolio",
     },
     {
+        title: "Volwaver",
+        description: "Automatically modulate your computer’s volume in waves or instant jumps to prevent auditory habituation and keep background audio dynamic.",
+        img: "volwaver-img.png",
+        techStack: ["React", "Express"],
+        codeLink: "https://github.com/Filippo-Dembech/Volwaver",
+    },
+    {
         title: "Red Cross Crammer",
         description:
             "An interactive study aid designed for Red Cross volunteers. It helps quickly memorizing emergency procedures through a clean, focused interface. Perfect for brushing up on protocols.",
