@@ -23,7 +23,6 @@ export default function LanguagesStoryline() {
                     }
                     date={language.date}
                     iconClassName={`bg-white flex ${language.iconClassName}`}
-                    //iconClassName={`flex ${language.iconClassName}`}
                 >
                     <h3 className="text-[2rem]">{language.name}</h3>
                     <p className="font-light">{language.description}</p>
