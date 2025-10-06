@@ -77,7 +77,7 @@ const projectsData = [
         codeLink: "https://github.com/Filippo-Dembech/Projecthor",
     },
     {
-        title: "Projecthor",
+        title: "Not So Bad",
         description: "Not So Bad is a daily reflection app that helps you focus on the positive moments in your life. Focus on the good, because it's usually Not So bad.",
         img: "not-so-bad-img.png",
         techStack: ["React", "Typescript", "Context API", "idb", ],
