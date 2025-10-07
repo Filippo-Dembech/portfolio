@@ -84,6 +84,14 @@ const projectsData = [
         projectLink: "https://filippo-dembech.github.io/not-so-bad/",
         codeLink: "https://github.com/Filippo-Dembech/not-so-bad",
     },
+    {
+        title: "Kanji Area",
+        description: "A simple app where to practice Kanji writing.",
+        img: "kanji-area-img.png",
+        techStack: ["React", "Typescript", "localStorage" ],
+        projectLink: "https://filippo-dembech.github.io/kanji-area/",
+        codeLink: "https://github.com/Filippo-Dembech/kanji-area",
+    },
 ];
 
 export default projectsData;
