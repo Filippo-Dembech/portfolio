@@ -92,6 +92,13 @@ const projectsData = [
         projectLink: "https://filippo-dembech.github.io/kanji-area/",
         codeLink: "https://github.com/Filippo-Dembech/kanji-area",
     },
+    {
+        title: "C++ Playground",
+        description: "A local playground where you can test your C++ code and practice it's syntax.",
+        img: "cpp-playground.png",
+        techStack: ["Node.js", "C++" ],
+        codeLink: "https://github.com/Filippo-Dembech/C-Playground",
+    },
 ];
 
 export default projectsData;
