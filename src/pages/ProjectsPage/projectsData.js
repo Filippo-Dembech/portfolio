@@ -110,7 +110,7 @@ const projectsData = [
     {
         title: "Alenager",
         description: "A small web app designed to help my girlfriend in her job. It was a really interesting project. It basically helps her manage her job procedures and check out all the steps done.",
-        img: "dp-presenter-img.png",
+        img: "alenager-img.png",
         techStack: ["React", "Tailwind", "Dexie" ],
         projectLink: "https://alenager.vercel.app/",
         codeLink: "https://github.com/Filippo-Dembech/alenager"
