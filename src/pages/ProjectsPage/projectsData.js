@@ -99,6 +99,22 @@ const projectsData = [
         techStack: ["Node.js", "C++" ],
         codeLink: "https://github.com/Filippo-Dembech/C-Playground",
     },
+    {
+        title: "DP Presenter",
+        description: "A site to recap Design Patterns with A LOT of examples and use cases. I am still updating design patterns every day. Stay tuned!",
+        img: "dp-presenter-img.png",
+        techStack: ["React", "Tailwind", "React Router V7" ],
+        projectLink: "https://filippo-dembech.github.io/dp-presenter/",
+        codeLink: "https://github.com/Filippo-Dembech/dp-presenter"
+    },
+    {
+        title: "Alenager",
+        description: "A small web app designed to help my girlfriend in her job. It was a really interesting project. It basically helps her manage her job procedures and check out all the steps done.",
+        img: "dp-presenter-img.png",
+        techStack: ["React", "Tailwind", "Dexie" ],
+        projectLink: "https://alenager.vercel.app/",
+        codeLink: "https://github.com/Filippo-Dembech/alenager"
+    },
 ];
 
 export default projectsData;
